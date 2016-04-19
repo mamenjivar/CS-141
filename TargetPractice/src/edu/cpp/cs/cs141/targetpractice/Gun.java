@@ -1,6 +1,6 @@
 /**
  * CS 141: Intro to Programming and Problem Solving
- * Professor: Edwin Rodríguez
+ * Professor: Edwin Rodrï¿½guez
  * 
  * Programming Assignment #2
  * 
@@ -20,20 +20,26 @@ import java.util.Random;
  */
 public class Gun {
 	/**
-	 * 
+	 * Has a value of 7 that can not be modified
+	 * which represents the ammunition capacity of a weapon
+	 * which can be used outside of a class
 	 */
 	private static final int AMMO_CAPACITY = 7;
 	/**
-	 * 
+	 * This has the integer value of 7 which is
+	 * the ammunition capacity of a weapon which is capable
+	 * of being used within this class only
 	 */
 	private int ammo = 7;
 	/**
-	 * 
+	 * This integer has a value of 75 which shows
+	 * the accuracy of the weapon provided
 	 */
 	private int accuracy = 75;
 	/**
-	 * 
-	 * @return
+	 * This 
+	 * @return the return value shows whether the weapon
+	 * has successfully hit the target or not 
 	 */
 	public boolean shoot(Random rand){
 		boolean shot = false;
