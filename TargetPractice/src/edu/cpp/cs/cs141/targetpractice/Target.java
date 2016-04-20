@@ -20,7 +20,7 @@ package edu.cpp.cs.cs141.targetpractice;
 public class Target {
 	/**
 	 * This field keeps track of whether the target has
-	 * ben hit by a bullet. Initially {@code false}, this
+	 * been hit by a bullet. Initially {@code false}, this
 	 * field can only be changed by the {@link #hitTarget()} method
 	 * from {@code false} to {@code true}, modeling the action 
 	 * of hitting the target

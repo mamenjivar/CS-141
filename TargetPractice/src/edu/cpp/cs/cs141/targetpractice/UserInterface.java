@@ -16,5 +16,8 @@ package edu.cpp.cs.cs141.targetpractice;
  * keyboard input
  */
 public class UserInterface {
+	public void intro(){
+		System.out.println("Hello world from UserInterface");
+	}
 
 }
