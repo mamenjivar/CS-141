@@ -18,18 +18,20 @@ import java.util.Random;
  * Gun object
  * never have a method that is more 15 - 20 lines of code
  * 
- * check ammo count
- * create test program to make sure this class works properly
+ * TODO: ammo count works and shoot method works and decreases
+ * weapon capacity by one, just need to fix if target was accurate or not
  */
 public class Gun {
 	/**
 	 * Has a value of 7 that can not be modified
 	 * which represents the ammunition capacity of a weapon
 	 * which can be used outside of a class
+	 * will also be the max capacity for all weapons
+	 * shotgun, handgun, and rifle
 	 */
-	private static final int AMMO_CAPACITY_HANDGUN = 7;
-	private static final int AMMO_CAPACITY_SHOTGUN = 8;
-	private static final int AMMO_CAPACITY_RIFLE = 10;
+	private static final int AMMO_CAPACITY = 7;
+	//private static final int AMMO_CAPACITY_SHOTGUN = 8;
+	//private static final int AMMO_CAPACITY_RIFLE = 10;
 	/**
 	 * This has the integer value of 7 which is
 	 * the ammunition capacity of a weapon which is capable
@@ -85,8 +87,7 @@ public class Gun {
 	 */
 	//method shoot and reload
 	public void reload(){
-		if(2<3){}
-		ammo = AMMO_CAPACITY_HANDGUN;
+		ammo = AMMO_CAPACITY;
 	}
 	/**
 	 * overloaded method for reload that will 
