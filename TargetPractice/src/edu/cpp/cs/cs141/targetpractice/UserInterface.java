@@ -23,8 +23,9 @@ public class UserInterface {
 		String weapon = keyboard.nextLine();
 		System.out.println("Enter s to shoot, or q to quit");
 		String choice = keyboard.nextLine();
-		Gun pistol = new Gun();
-		System.out.println(pistol.getAmmo());
+		//Gun creation will be under the Game engine
+		//Gun pistol = new Gun();
+		//System.out.println(pistol.getAmmo());
 		
 		
 	}
