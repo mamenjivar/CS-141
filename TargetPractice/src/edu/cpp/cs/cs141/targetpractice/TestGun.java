@@ -7,13 +7,16 @@ import java.util.Random;
 
 /**
  * @author Miguel Menjivar
+ * 
  * This main class will test to make sure that
  * the Gun class works properly
  */
 public class TestGun {
 
 	/**
-	 * @param args
+	 * The reload method and the shooting method both work
+	 * just need to find out how to test whether the object
+	 * hits its target or misses it
 	 */
 	public static void main(String[] args) {
 		Gun pistol = new Gun();

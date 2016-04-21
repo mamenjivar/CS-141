@@ -25,10 +25,25 @@ public class GameEngine {
 	 * This method will be in charge of creating the weapons
 	 *  used to shoot at the targets
 	 */
-	public void GunCreation(){
-		Gun pistol = new Gun();
-		pistol.getAmmo();
+	public void gunCreation(String gun){
+		if (gun.equals("pistol")){
+			Gun pistol = new Gun();
+			System.out.println("This is the gun class");
+		}
+		else if(gun.equals("rifle")){
+			Gun rifle = new Gun(90, 7);
+			System.out.println("This is the rifle class");
+		} else if(gun.equals("shotgun")){
+			Gun shotgun = new Gun(70, 7);
+			System.out.println("This is the shotgun class");
+		} else
+			System.out.println("There is no known weapon");
+		//pistol.getAmmo();
 	}
-	
-
+	public void targetCreation(){
+		int[] targets = new int[5];
+	}
+	public void hitTargets(){
+		
+	}
 }
