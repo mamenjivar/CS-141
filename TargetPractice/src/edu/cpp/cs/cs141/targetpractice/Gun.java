@@ -51,7 +51,7 @@ public class Gun {
 	 */
 	public Gun(){
 		ammo = 7;
-		accuracy = 85;
+		accuracy = 5;
 	}
 	/**
 	 * Will overload constructor to set values for the rifle
@@ -70,14 +70,15 @@ public class Gun {
 	 * @return the return value shows whether the weapon
 	 * has successfully hit the target or not 
 	 */
-	public boolean shoot(Random rand){
+	public boolean shoot(int rand){
 		boolean shot = false;
-		int shotSuccess = rand.nextInt(100);
+		int shotSuccess = rand;
 		
-		if (shotSuccess < accuracy)
+		if (shotSuccess <= accuracy)
 			shot = true;
 		//check if there is enough ammo, check game engine and call if there is ammo
 		ammo--;
+		System.out.println("Hit or miss: " + shot + "\n");
 		return false;
 	}
 	/**

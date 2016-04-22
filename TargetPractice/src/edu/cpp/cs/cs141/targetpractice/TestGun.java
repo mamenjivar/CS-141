@@ -20,16 +20,26 @@ public class TestGun {
 	 */
 	public static void main(String[] args) {
 		Gun pistol = new Gun();
-		Random dice = new Random(100);
-		//for(int i = 5; i < 0; i--){
-			System.out.println(pistol.getAmmo());
-			pistol.shoot(dice);
-			System.out.println(pistol.getAmmo());
-			pistol.shoot(dice);
-			System.out.println(pistol.getAmmo());
-			pistol.reload();
-			System.out.println(pistol.getAmmo());
+		Random dice = new Random();
+		//int number = dice.nextInt(10) + 1;
+		for(int i = 0; i < 5; i++){
+			int number = dice.nextInt(10) + 1;
+			System.out.println("ammunition: " + pistol.getAmmo());
+			System.out.println("The random number: " + number);
+			pistol.shoot(number);
+			//System.out.println(pistol.getAmmo());
+			//System.out.println(number);
+			//pistol.shoot(number);
+			//System.out.println(pistol.getAmmo());
+			//System.out.println(number);
+			//pistol.reload();
+			//System.out.println(pistol.getAmmo());
 			
+			
+			
+		}
+		//for(int i = 0; i < 10; i++){
+			//int number = dice.nextInt(10) +1;
 		//}
 	}
 

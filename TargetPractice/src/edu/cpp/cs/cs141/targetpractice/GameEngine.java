@@ -10,6 +10,8 @@
  */
 package edu.cpp.cs.cs141.targetpractice;
 
+import java.util.Random;
+
 /**
  * @author Miguel Menjivar
  * 
@@ -24,24 +26,52 @@ public class GameEngine {
 	/**
 	 * This method will be in charge of creating the weapons
 	 *  used to shoot at the targets
+	 *  
+	 *  Need to create the targets and how to make it hit
 	 */
+	
 	public void gunCreation(String gun){
+		Random dice = new Random();
+		
 		if (gun.equals("pistol")){
 			Gun pistol = new Gun();
+			//Random dice = new Random();
 			System.out.println("This is the gun class");
+			for (int i = 0; i < 5; i++){
+				int number = dice.nextInt(10) + 1;
+				System.out.println("ammunition: " + pistol.getAmmo());
+				System.out.println("The random number: " + number);
+				pistol.shoot(number);
+			}
+			
 		}
 		else if(gun.equals("rifle")){
-			Gun rifle = new Gun(90, 7);
+			Gun rifle = new Gun(9, 8);
 			System.out.println("This is the rifle class");
-		} else if(gun.equals("shotgun")){
-			Gun shotgun = new Gun(70, 7);
+			for (int i = 0; i < 5; i++){
+				int number = dice.nextInt(10) + 1;
+				System.out.println("ammunition: " + rifle.getAmmo());
+				System.out.println("The random number: " + number);
+				rifle.shoot(number);
+			}
+			
+		}
+		else if(gun.equals("shotgun")){
+			Gun shotgun = new Gun(7, 5);
 			System.out.println("This is the shotgun class");
-		} else
+			for (int i = 0; i < 5; i++){
+				int number = dice.nextInt(10) + 1;
+				System.out.println("ammunition: " + shotgun.getAmmo());
+				System.out.println("The random number: " + number);
+				shotgun.shoot(number);
+			}
+		}
+		else
 			System.out.println("There is no known weapon");
 		//pistol.getAmmo();
 	}
 	public void targetCreation(){
-		int[] targets = new int[5];
+		int[] icons = {1, 2, 3, 4, 5};
 	}
 	public void hitTargets(){
 		
