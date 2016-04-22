@@ -78,7 +78,7 @@ public class Gun {
 			shot = true;
 		//check if there is enough ammo, check game engine and call if there is ammo
 		ammo--;
-		System.out.println("Hit or miss: " + shot + "\n");
+		System.out.println("Hit or miss: " + shot);
 		return false;
 	}
 	/**

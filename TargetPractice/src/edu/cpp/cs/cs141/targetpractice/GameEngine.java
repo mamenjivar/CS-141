@@ -22,7 +22,9 @@ import java.util.Random;
  * 
  */
 public class GameEngine {
-	private int targets = 5;
+	private static final int TARGET_NUMBERS = 5;
+	
+	private int target;
 	/**
 	 * This method will be in charge of creating the weapons
 	 *  used to shoot at the targets
@@ -64,16 +66,25 @@ public class GameEngine {
 				System.out.println("ammunition: " + shotgun.getAmmo());
 				System.out.println("The random number: " + number);
 				shotgun.shoot(number);
+				targetCreation();
+				hitTargets(shotgun.shoot(number));
 			}
 		}
 		else
 			System.out.println("There is no known weapon");
-		//pistol.getAmmo();
 	}
 	public void targetCreation(){
-		int[] icons = {1, 2, 3, 4, 5};
+		target = 5;
 	}
-	public void hitTargets(){
-		
+	public void reloadTargets(int target){
+		target = TARGET_NUMBERS;
+	}
+	public void hitTargets(boolean name){
+		if (name = true){
+			target--;
+			System.out.println("You have: " + target + "\n");
+		}
+		else
+			System.out.println("You did not hit target: " + target + "\n");
 	}
 }
