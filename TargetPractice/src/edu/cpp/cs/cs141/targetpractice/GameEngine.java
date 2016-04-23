@@ -4,13 +4,16 @@
  * 
  * Programming Assignment #2
  * 
- * <description of assignment>
+ * This assignment is based off target practice. The purpose is that the user will
+ * be able to choose a weapon ranging from hand guns, rifles, and shotguns. They also
+ * have to shoot at five targets.
  * 
  * Miguel Menjivar
  */
 package edu.cpp.cs.cs141.targetpractice;
 
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * @author Miguel Menjivar
@@ -22,17 +25,30 @@ import java.util.Random;
  * 
  */
 public class GameEngine {
+	/**
+	 * This integer will hold the final amount of 5 that will be used to reload the
+	 * ammunition when it depletes
+	 */
 	private static final int TARGET_NUMBERS = 5;
-	
+	/**
+	 * This private field will hold the value for the number of targets when the game begins
+	 */
 	private int target;
 	/**
 	 * This method will be in charge of creating the weapons
 	 *  used to shoot at the targets
 	 *  
-	 *  Need to create the targets and how to make it hit
+	 *  gunCreation method creates the gun objects ranging from
+	 *  rifles, hand guns, and shotguns
+	 *  each have their own attributes
 	 */
 	
+	Target bullseye = new Target();
+	
 	public void gunCreation(String gun){
+		Scanner keyboard = new Scanner(System.in);
+		bullseye.targetCreation();
+		//Gun shotgun = new Gun(7, 5);
 		Random dice = new Random();
 		
 		if (gun.equals("pistol")){
@@ -45,46 +61,38 @@ public class GameEngine {
 				System.out.println("The random number: " + number);
 				pistol.shoot(number);
 			}
-			
 		}
 		else if(gun.equals("rifle")){
 			Gun rifle = new Gun(9, 8);
 			System.out.println("This is the rifle class");
-			for (int i = 0; i < 5; i++){
+			//if (choice.equals("s"))
+			for(int i = 0; i < 5; i++){
 				int number = dice.nextInt(10) + 1;
 				System.out.println("ammunition: " + rifle.getAmmo());
 				System.out.println("The random number: " + number);
 				rifle.shoot(number);
 			}
-			
 		}
 		else if(gun.equals("shotgun")){
-			Gun shotgun = new Gun(7, 5);
+			char letter = 0;
+			Gun shotgun = new Gun(6, 5);
+			Target bullseye = new Target();
 			System.out.println("This is the shotgun class");
-			for (int i = 0; i < 5; i++){
-				int number = dice.nextInt(10) + 1;
-				System.out.println("ammunition: " + shotgun.getAmmo());
-				System.out.println("The random number: " + number);
-				shotgun.shoot(number);
-				targetCreation();
-				hitTargets(shotgun.shoot(number));
-			}
+			bullseye.targetCreation();
+			System.out.println("Enter s to shoot or q to quit");
+			do{
+				for(int i = 2; i > 0; i--){
+					int number = dice.nextInt(10) + 1;
+					System.out.println("ammunition: " + shotgun.getAmmo());
+					bullseye.hitTargets(shotgun.shoot(number));
+					
+					System.out.println("Enter s to shoot or q to quit");
+					String name = keyboard.nextLine();
+					letter = name.charAt(0);
+				}
+			} while(letter == 's');
 		}
 		else
 			System.out.println("There is no known weapon");
-	}
-	public void targetCreation(){
-		target = 5;
-	}
-	public void reloadTargets(int target){
-		target = TARGET_NUMBERS;
-	}
-	public void hitTargets(boolean name){
-		if (name = true){
-			target--;
-			System.out.println("You have: " + target + "\n");
-		}
-		else
-			System.out.println("You did not hit target: " + target + "\n");
 	}
 }

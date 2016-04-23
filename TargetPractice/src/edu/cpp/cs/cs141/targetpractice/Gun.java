@@ -4,7 +4,9 @@
  * 
  * Programming Assignment #2
  * 
- * <description of assignment>
+ * This assignment is based off target practice. The purpose is that the user will
+ * be able to choose a weapon ranging from hand guns, rifles, and shotguns. They also
+ * have to shoot at five targets.
  * 
  * Miguel Menjivar
  */
@@ -77,9 +79,13 @@ public class Gun {
 		if (shotSuccess <= accuracy)
 			shot = true;
 		//check if there is enough ammo, check game engine and call if there is ammo
-		ammo--;
-		System.out.println("Hit or miss: " + shot);
-		return false;
+		//ammo--;
+		if (ammo > 0){
+			ammo--;
+		}else if(ammo == 0){
+			System.out.println("You ran out of ammo");
+		}
+		return shot;
 	}
 	/**
 	 * This will be a default method for reload

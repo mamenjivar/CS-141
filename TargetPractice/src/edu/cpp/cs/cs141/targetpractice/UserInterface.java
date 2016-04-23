@@ -4,7 +4,9 @@
  * 
  * Programming Assignment #2
  * 
- * <description of assignment>
+ * This assignment is based off target practice. The purpose is that the user will
+ * be able to choose a weapon ranging from hand guns, rifles, and shotguns. They also
+ * have to shoot at five targets.
  * 
  * Miguel Menjivar
  */
@@ -17,22 +19,16 @@ import java.util.Scanner;
  */
 public class UserInterface {
 	Scanner keyboard = new Scanner(System.in);
+	/**
+	 * This is the user interface where most of the gaming interaction takes place.
+	 * It is also the introduction where you can choose your weapon of choice before the game begins 
+	 */
 	public void Intro(){
+		GameEngine test = new GameEngine();
 		System.out.println("Welcome to Target Practice");
 		System.out.println("Please choose: pistol, shotgun, rifle");
 		String weapon = keyboard.nextLine();
-		System.out.println("Enter s to shoot, or q to quit");
-		String choice = keyboard.nextLine();
-		//Gun creation will be under the Game engine
-		//Gun pistol = new Gun();
-		//System.out.println(pistol.getAmmo());
-		
-		
-	}
-	public String toString(){
-		//System.out.println("Welcome to the target practice");
-		String str = "";
-		return str;
-	}
+		test.gunCreation(weapon);
 
+	}
 }
