@@ -29,8 +29,6 @@ public class TestGE {
 		//}
 		keyboard.close();
 		
-		
-
 	}
 
 }

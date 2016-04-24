@@ -48,16 +48,14 @@ public class GameEngine {
 	public void gunCreation(String gun){
 		Scanner keyboard = new Scanner(System.in);
 		bullseye.targetCreation();
-		//Gun shotgun = new Gun(7, 5);
 		Random dice = new Random();
 		
 		if (gun.equals("pistol")){
 			Gun pistol = new Gun();
-			//Random dice = new Random();
 			System.out.println("This is the gun class");
 			for (int i = 0; i < 5; i++){
 				int number = dice.nextInt(10) + 1;
-				System.out.println("ammunition: " + pistol.getAmmo());
+				System.out.println("you shot: " + pistol.getAmmo() + " rounds remaining");
 				System.out.println("The random number: " + number);
 				pistol.shoot(number);
 			}
@@ -68,7 +66,7 @@ public class GameEngine {
 			//if (choice.equals("s"))
 			for(int i = 0; i < 5; i++){
 				int number = dice.nextInt(10) + 1;
-				System.out.println("ammunition: " + rifle.getAmmo());
+				System.out.println("You shot: " + rifle.getAmmo() + " rounds remaining");
 				System.out.println("The random number: " + number);
 				rifle.shoot(number);
 			}
@@ -83,7 +81,7 @@ public class GameEngine {
 			do{
 				for(int i = 2; i > 0; i--){
 					int number = dice.nextInt(10) + 1;
-					System.out.println("ammunition: " + shotgun.getAmmo());
+					System.out.println("You shot: " + shotgun.getAmmo() + " rounds remaining");
 					bullseye.hitTargets(shotgun.shoot(number));
 					
 					System.out.println("Enter s to shoot or q to quit");
@@ -94,5 +92,6 @@ public class GameEngine {
 		}
 		else
 			System.out.println("There is no known weapon");
+		keyboard.close();
 	}
 }

@@ -1,6 +1,6 @@
 /**
  * CS 141: Intro to Programming and Problem Solving
- * Professor: Edwin Rodríguez
+ * Professor: Edwin Rodrï¿½guez
  * 
  * Programming Assignment #2
  * 
@@ -49,14 +49,14 @@ public class Target {
 	public void hitTargets(boolean name){
 		if (name == true && target > 0) {
 			target--;
-			System.out.println("There are " + target + " target(s) left \n");
+			System.out.println("HIT: " + target + " target(s) remaining \n");
 			
 		}
 		else if(name == true && target == 0){
 			System.out.println("All the targets are hit");
 		}
 		else
-			System.out.println("You did not hit the target: " + target + "\n");
+			System.out.println("MISSED: " + target + " target(s) remain\n");
 	}
 	/**
 	 * This method is used to reload the targets if the user wants to

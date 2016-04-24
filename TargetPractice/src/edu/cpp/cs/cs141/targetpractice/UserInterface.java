@@ -11,6 +11,7 @@
  * Miguel Menjivar
  */
 package edu.cpp.cs.cs141.targetpractice;
+
 import java.util.Scanner;
 /**
  * @author Miguel Menjivar
