@@ -13,7 +13,6 @@
 package edu.cpp.cs.cs141.targetpractice;
 
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * @author Miguel Menjivar
@@ -22,7 +21,6 @@ import java.util.Scanner;
  * create array of targets, create gun, have methods
  * that shoot weapons at targets, 
  * tells that will show you when you have hit all targets
- * 
  */
 public class GameEngine {
 	/**
@@ -44,54 +42,36 @@ public class GameEngine {
 	 */
 	
 	Target bullseye = new Target();
-	
-	public void gunCreation(String gun){
-		Scanner keyboard = new Scanner(System.in);
-		bullseye.targetCreation();
+	/**
+	 * gunCreation method will create the weapon that the 
+	 * user chooses when the program initializes
+	 * 
+	 * @param gun is the value that is initialized from the 
+	 * UserInterface class when the user types what weapon 
+	 * he/she will use
+	 * 
+	 * @return will return the value initialized when creating the value
+	 * for the weapon
+	 */
+	public Gun gunCreation(String gun){
 		Random dice = new Random();
-		
 		if (gun.equals("pistol")){
 			Gun pistol = new Gun();
 			System.out.println("This is the gun class");
-			for (int i = 0; i < 5; i++){
-				int number = dice.nextInt(10) + 1;
-				System.out.println("you shot: " + pistol.getAmmo() + " rounds remaining");
-				System.out.println("The random number: " + number);
-				pistol.shoot(number);
-			}
+			return pistol;
 		}
 		else if(gun.equals("rifle")){
 			Gun rifle = new Gun(9, 8);
 			System.out.println("This is the rifle class");
-			//if (choice.equals("s"))
-			for(int i = 0; i < 5; i++){
-				int number = dice.nextInt(10) + 1;
-				System.out.println("You shot: " + rifle.getAmmo() + " rounds remaining");
-				System.out.println("The random number: " + number);
-				rifle.shoot(number);
-			}
+			return rifle;
 		}
 		else if(gun.equals("shotgun")){
-			char letter = 0;
 			Gun shotgun = new Gun(6, 5);
-			Target bullseye = new Target();
 			System.out.println("This is the shotgun class");
-			bullseye.targetCreation();
-			System.out.println("Enter s to shoot or q to quit");
-			do{
-				for(int i = 2; i > 0; i--){
-					int number = dice.nextInt(10) + 1;
-					System.out.println("You shot: " + shotgun.getAmmo() + " rounds remaining");
-					bullseye.hitTargets(shotgun.shoot(number));
-					
-					System.out.println("Enter s to shoot or q to quit");
-					String name = keyboard.nextLine();
-					letter = name.charAt(0);
-				}
-			} while(letter == 's');
+			return shotgun;
 		}
 		else
 			System.out.println("There is no known weapon");
-		keyboard.close();
+		return null;
 	}
 }

@@ -73,6 +73,7 @@ public class Gun {
 	 * has successfully hit the target or not 
 	 */
 	public boolean shoot(int rand){
+
 		boolean shot = false;
 		int shotSuccess = rand;
 		
@@ -84,6 +85,8 @@ public class Gun {
 			ammo--;
 		}else if(ammo == 0){
 			System.out.println("You ran out of ammo");
+			UserInterface game = new UserInterface();
+			game.reloadWeapon();
 		}
 		return shot;
 	}

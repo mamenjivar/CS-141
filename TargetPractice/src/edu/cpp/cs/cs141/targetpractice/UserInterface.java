@@ -12,6 +12,7 @@
  */
 package edu.cpp.cs.cs141.targetpractice;
 
+import java.util.Random;
 import java.util.Scanner;
 /**
  * @author Miguel Menjivar
@@ -29,7 +30,29 @@ public class UserInterface {
 		System.out.println("Welcome to Target Practice");
 		System.out.println("Please choose: pistol, shotgun, rifle");
 		String weapon = keyboard.nextLine();
-		test.gunCreation(weapon);
+		//test.gunCreation(weapon);
+		gameTime(test.gunCreation(weapon));
 
+	}
+	public void gameTime(Gun weapon){
+		char letter = 0;
+		Random dice = new Random();
+		Target bullseye = new Target();
+		bullseye.targetCreation();
+		System.out.println("Enter s to shoot or q to quit");
+		do{
+			int number = dice.nextInt(10) + 1;
+			System.out.println("SHOOT: " + weapon.getAmmo() + " rounds remaining");
+			bullseye.hitTargets(weapon.shoot(number));
+			
+			System.out.println("Enter s to shoot or q to quit");
+			String name = keyboard.nextLine();
+			letter = name.charAt(0);
+			
+		} while(letter == 's' || letter == 'S');
+	}
+	public void reloadWeapon(){
+		System.out.println("Would you like to reload your weapon: ");
+		System.out.println("Type y for yes, or n for No(will terminate game");
 	}
 }
