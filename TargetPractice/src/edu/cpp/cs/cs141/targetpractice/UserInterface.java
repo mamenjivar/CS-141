@@ -54,5 +54,6 @@ public class UserInterface {
 	public void reloadWeapon(){
 		System.out.println("Would you like to reload your weapon: ");
 		System.out.println("Type y for yes, or n for No(will terminate game");
+		String input = keyboard.nextLine();
 	}
 }
