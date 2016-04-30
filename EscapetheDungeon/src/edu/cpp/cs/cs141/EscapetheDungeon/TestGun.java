@@ -6,17 +6,16 @@ package edu.cpp.cs.cs141.EscapetheDungeon;
 import java.util.Scanner;
 
 /**
- * @author Miguel
+ * @author Miguel Menjivar
  *
  */
 public class TestGun {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
-		Shotgun test = new Shotgun();
+		Shotgun SG = new Shotgun();
 		HandGun pistol = new HandGun();
 		Rifle rifle = new Rifle();
-		//Gun amg = new HandGun();
-		//test.shoot();
+		
 		System.out.println("Please choose your weapon");
 		String weapon = keyboard.nextLine();
 		
@@ -25,7 +24,7 @@ public class TestGun {
 			pistol.shoot();
 		}
 		else if(weapon.equals("shotgun")){
-			test.shoot();
+			SG.shoot();
 		}
 		else if (weapon.equals("rifle")){
 			rifle.shoot();

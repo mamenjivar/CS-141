@@ -11,4 +11,8 @@ package edu.cpp.cs.cs141.EscapetheDungeon;
  * implements the ActiveAgent interface.
  */
 public class ActiveAgents {
+	private final int MAX_HEALTH_ENEMY = 5;
+	private final int MAX_HEALTH_USER = 20;
+	
+	
 }

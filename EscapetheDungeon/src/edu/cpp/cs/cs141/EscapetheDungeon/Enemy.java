@@ -2,7 +2,7 @@
  * 
  */
 package edu.cpp.cs.cs141.EscapetheDungeon;
-
+import java.util.Random;
 /**
  * @author Miguel Menjivar
  *
@@ -11,5 +11,21 @@ package edu.cpp.cs.cs141.EscapetheDungeon;
  * This class will solely focus on the attributes of the enemy
  */
 public class Enemy extends ActiveAgents{
-
+	private int handGun = 50;
+	HandGun pistol = new HandGun();
+	Rifle rifle = new Rifle();
+	
+	Random weapon = new Random();
+	private int health = 5;
+	
+	public void weapon(){
+		int choose = weapon.nextInt(100) + 1;
+		
+		if(choose < handGun){
+			pistol.shoot();
+		}
+		else if(choose > handGun){
+			rifle.shoot();
+		}
+	}
 }

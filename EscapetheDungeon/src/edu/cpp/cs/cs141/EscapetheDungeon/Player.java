@@ -10,4 +10,18 @@ package edu.cpp.cs.cs141.EscapetheDungeon;
  * This class will solely focus on the player attributes
  */
 public class Player extends ActiveAgents {
+	
+	private int health = 20;
+	/**
+	 * 
+	 */
+	public void attack(){
+		
+	}
+	/**
+	 * 
+	 */
+	public void heal(){
+		
+	}
 }
