@@ -13,10 +13,17 @@ import java.util.Random;
  * that is a subtype of the Gun class
  */
 public abstract class Gun {
-	public abstract void shoot();
+	//HandGun pistola = new HandGun();
+	//Rifle rifle = new Rifle();
+	//Shotgun shotgun = new Shotgun();
+	
+	private int pistol = 15;
+	//public abstract void shoot();
 	public abstract void reload();
 
-	public Gun(){
-		
+	public void Gunz(String gunzilla){
+		if(gunzilla.equals("pistol")){
+			//pistola.shoot();
+		}
 	}
 }

@@ -22,6 +22,18 @@ public class Player extends ActiveAgents {
 	 * 
 	 */
 	public void heal(){
-		
+		health = 20;
+	}
+	public void Hit(){
+		System.out.println("The Player has been hit");
+		setHealth(health);
+		System.out.println("The Player has " + health + " health points remaining");
+	}
+	public void setHealth(int health){
+		this.health = health;
+		health--;
+	}
+	public int getHealth(){
+		return health;
 	}
 }
