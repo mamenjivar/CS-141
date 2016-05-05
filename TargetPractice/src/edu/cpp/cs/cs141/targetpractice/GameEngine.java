@@ -24,24 +24,9 @@ import java.util.Random;
  */
 public class GameEngine {
 	/**
-	 * This integer will hold the final amount of 5 that will be used to reload the
-	 * ammunition when it depletes
-	 */
-	private static final int TARGET_NUMBERS = 5;
-	/**
 	 * This private field will hold the value for the number of targets when the game begins
 	 */
 	private int target;
-	/**
-	 * This method will be in charge of creating the weapons
-	 *  used to shoot at the targets
-	 *  
-	 *  gunCreation method creates the gun objects ranging from
-	 *  rifles, hand guns, and shotguns
-	 *  each have their own attributes
-	 */
-	
-	Target bullseye = new Target();
 	/**
 	 * gunCreation method will create the weapon that the 
 	 * user chooses when the program initializes
@@ -54,24 +39,25 @@ public class GameEngine {
 	 * for the weapon
 	 */
 	public Gun gunCreation(String gun){
-		Random dice = new Random();
+		Gun weapon;
+		
 		if (gun.equals("pistol")){
-			Gun pistol = new Gun();
-			System.out.println("This is the gun class");
-			return pistol;
+			weapon = new Gun();
+			System.out.println("This is the pistol class");
+			return weapon;
 		}
 		else if(gun.equals("rifle")){
-			Gun rifle = new Gun(9, 8);
-			System.out.println("This is the rifle class");
-			return rifle;
+			weapon = new Gun(8, 80);
+			System.out.println("This is the rifle class\n");
+			return weapon;
 		}
 		else if(gun.equals("shotgun")){
-			Gun shotgun = new Gun(6, 5);
-			System.out.println("This is the shotgun class");
-			return shotgun;
+			weapon = new Gun(6, 60);
+			System.out.println("This is the shotgun class\n");
+			return weapon;
 		}
 		else
-			System.out.println("There is no known weapon");
+			System.out.println("There is no known weapon\n");
 		return null;
 	}
 }

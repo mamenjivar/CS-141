@@ -30,19 +30,27 @@ public class UserInterface {
 		System.out.println("Welcome to Target Practice");
 		System.out.println("Please choose: pistol, shotgun, rifle");
 		String weapon = keyboard.nextLine();
-		//test.gunCreation(weapon);
 		gameTime(test.gunCreation(weapon));
 
 	}
+	/**
+	 * The gameTime method is in charge of prompting the user to shoot
+	 * or quit the game. This method is the main interaction that will
+	 * occur throughout the game.
+	 * 
+	 * @param weapon The parameter is used when the Gun class is instantiated
+	 * with the specific weapon that it was called with
+	 */
 	public void gameTime(Gun weapon){
 		char letter = 0;
 		Random dice = new Random();
 		Target bullseye = new Target();
 		bullseye.targetCreation();
+		
 		System.out.println("Enter s to shoot or q to quit");
 		do{
-			int number = dice.nextInt(10) + 1;
-			System.out.println("SHOOT: " + weapon.getAmmo() + " rounds remaining");
+			int number = dice.nextInt(100) + 1;
+			System.out.println("SHOT: " + weapon.getAmmo() + " rounds remaining");
 			bullseye.hitTargets(weapon.shoot(number));
 			
 			System.out.println("Enter s to shoot or q to quit");
@@ -50,10 +58,5 @@ public class UserInterface {
 			letter = name.charAt(0);
 			
 		} while(letter == 's' || letter == 'S');
-	}
-	public void reloadWeapon(){
-		System.out.println("Would you like to reload your weapon: ");
-		System.out.println("Type y for yes, or n for No(will terminate game");
-		String input = keyboard.nextLine();
 	}
 }

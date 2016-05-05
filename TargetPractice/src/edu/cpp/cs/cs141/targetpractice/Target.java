@@ -21,14 +21,7 @@ package edu.cpp.cs.cs141.targetpractice;
  */
 public class Target {
 	private static final int TARGET_NUMBERS = 5;
-	/**
-	 * This field keeps track of whether the target has
-	 * been hit by a bullet. Initially {@code false}, this
-	 * field can only be changed by the {@link #hitTarget()} method
-	 * from {@code false} to {@code true}, modeling the action 
-	 * of hitting the target
-	 */
-	private boolean isHit = false;
+
 	/**
 	 * The private field target will hold the value for the targets that
 	 * the weapons will shoot at
@@ -47,13 +40,14 @@ public class Target {
 	 * @param name the parameter name comes from the shoot method in the Gun class
 	 */
 	public void hitTargets(boolean name){
-		if (name == true && target > 0) {
+		if (name == true && target >= 1) {
 			target--;
-			System.out.println("HIT: " + target + " target(s) remaining \n");
+			System.out.println("HIT: " + target + " target(s) still remaining \n");
 			
 		}
 		else if(name == true && target == 0){
-			System.out.println("All the targets are hit");
+			System.out.println("All targets are hit");
+			System.exit(0);
 		}
 		else
 			System.out.println("MISSED: " + target + " target(s) remain\n");

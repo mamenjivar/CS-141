@@ -25,22 +25,14 @@ public class TestGun {
 		for(int i = 0; i < 5; i++){
 			int number = dice.nextInt(10) + 1;
 			System.out.println("ammunition: " + pistol.getAmmo());
-			System.out.println("The random number: " + number);
 			pistol.shoot(number);
-			//System.out.println(pistol.getAmmo());
-			//System.out.println(number);
-			//pistol.shoot(number);
-			//System.out.println(pistol.getAmmo());
-			//System.out.println(number);
-			//pistol.reload();
-			//System.out.println(pistol.getAmmo());
-			
-			
-			
+			System.out.println(pistol.getAmmo());
+			System.out.println(number);
+			pistol.shoot(number);
+			System.out.println(pistol.getAmmo());
+			System.out.println(number);
+			pistol.reload();
+			System.out.println(pistol.getAmmo());		
 		}
-		//for(int i = 0; i < 10; i++){
-			//int number = dice.nextInt(10) +1;
-		//}
 	}
-
 }

@@ -12,48 +12,38 @@
  */
 package edu.cpp.cs.cs141.targetpractice;
 
-import java.util.Random;
-
 /**
  * @author Miguel Menjivar
  * 
- * Gun object
- * never have a method that is more 15 - 20 lines of code
- * 
- * TODO: ammo count works and shoot method works and decreases
- * weapon capacity by one, just need to fix if target was accurate or not
+ * This is the Gun class that will help with
+ * pulling the trigger and subtracting the ammunition count
+ * It will also be responsible for reloading each weapon.
  */
 public class Gun {
 	/**
-	 * Has a value of 7 that can not be modified
-	 * which represents the ammunition capacity of a weapon
-	 * which can be used outside of a class
-	 * will also be the max capacity for all weapons
-	 * shotgun, handgun, and rifle
+	 * The ammo capacity for all weapons it will have a max
+	 * capacity of 7 bullets. All weapons will have the same
+	 * capacity for the sake of the game
 	 */
 	private static final int AMMO_CAPACITY = 7;
-	//private static final int AMMO_CAPACITY_SHOTGUN = 8;
-	//private static final int AMMO_CAPACITY_RIFLE = 10;
 	/**
-	 * This has the integer value of 7 which is
-	 * the ammunition capacity of a weapon which is capable
-	 * of being used within this class only
+	 * This will hold the ammo capacity of the weapon when
+	 * it is shot from the weapon
 	 */
 	private int ammo;
-	//private int ammo = 7;
 	/**
-	 * This integer has a value of 75 which shows
-	 * the accuracy of the weapon provided
+	 * This private field will hold the value
+	 * for the accuracy which will help if the target
+	 * is hit or not
 	 */
-	//private int accuracy = 75;
 	private int accuracy;
 	/**
 	 * Default constructor that will initialize
-	 * handgun with only 7 rounds and 85% accuracy
+	 * hand gun with only 7 rounds and 85% accuracy
 	 */
 	public Gun(){
 		ammo = 7;
-		accuracy = 5;
+		accuracy = 70;
 	}
 	/**
 	 * Will overload constructor to set values for the rifle
@@ -63,7 +53,7 @@ public class Gun {
 	 * @param ammo will hold the ammunition provided by each weapon which
 	 * will be different for each weapon
 	 */
-	public Gun(int accuracy, int ammo){
+	public Gun(int ammo, int accuracy){
 		this.ammo = ammo;
 		this.accuracy = accuracy;
 	}
@@ -73,20 +63,14 @@ public class Gun {
 	 * has successfully hit the target or not 
 	 */
 	public boolean shoot(int rand){
-
 		boolean shot = false;
 		int shotSuccess = rand;
-		
 		if (shotSuccess <= accuracy)
 			shot = true;
-		//check if there is enough ammo, check game engine and call if there is ammo
-		//ammo--;
 		if (ammo > 0){
 			ammo--;
 		}else if(ammo == 0){
-			System.out.println("You ran out of ammo");
-			UserInterface game = new UserInterface();
-			game.reloadWeapon();
+			reload();
 		}
 		return shot;
 	}
@@ -95,17 +79,8 @@ public class Gun {
 	 * that will reload the clip to the max capacity
 	 *  of the weapon
 	 */
-	//method shoot and reload
 	public void reload(){
 		ammo = AMMO_CAPACITY;
-	}
-	/**
-	 * overloaded method for reload that will 
-	 * request from user how much ammo they will want
-	 */
-	public void reload(int ammo){
-		this.ammo = ammo;
-		
 	}
 	/**
 	 * Setter for ammunition field method
