@@ -1,5 +1,12 @@
 /**
- * 
+ * CS 141: Intro to Programming and Problem Solving
+ * Professor: Edwin Rodríguez
+ *
+ * Programming Assignment #3
+ *
+ * Escape the Dungeon
+ *
+ * Miguel Menjivar
  */
 package edu.cpp.cs.cs141.EscapetheDungeon;
 

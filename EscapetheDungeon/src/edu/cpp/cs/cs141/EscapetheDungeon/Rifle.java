@@ -1,5 +1,12 @@
 /**
- * 
+ * CS 141: Intro to Programming and Problem Solving
+ * Professor: Edwin Rodríguez
+ *
+ * Programming Assignment #3
+ *
+ * Escape the Dungeon
+ *
+ * Miguel Menjivar
  */
 package edu.cpp.cs.cs141.EscapetheDungeon;
 
@@ -26,6 +33,9 @@ public class Rifle extends Gun{
 		ammo--;
 		System.out.println("You have: " + ammo + " rounds left");
 	}
+	/**
+	 * This is the method that is automatically created when the Gun class is abstract
+	 */
 	@Override
 	public void reload() {
 		ammo = 10;		
