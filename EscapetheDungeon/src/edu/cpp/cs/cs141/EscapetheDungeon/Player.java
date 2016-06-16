@@ -24,7 +24,7 @@ public class Player extends ActiveAgents {
 	private int health = 20;
 	/**
 	 * This method will set the value of health
-	 * back to 20 to simulate that the person recieved a health pack
+	 * back to 20 to simulate that the person received a health pack
 	 */
 	public void heal(){
 		health = 20;
@@ -45,7 +45,7 @@ public class Player extends ActiveAgents {
 	 */
 	public void setHealth(int health){
 		this.health = health;
-		health--;
+		this.health--;
 	}
 	/**
 	 * The getter for health

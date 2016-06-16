@@ -18,5 +18,6 @@ package edu.cpp.cs.cs141.EscapetheDungeon;
  * when the enemy dies
  */
 public class Ammunition extends ItemDrops{
-
+	
+	private int numbers;
 }

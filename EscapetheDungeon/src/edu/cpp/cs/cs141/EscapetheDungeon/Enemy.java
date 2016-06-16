@@ -32,6 +32,7 @@ public class Enemy extends ActiveAgents{
 	 * The private field health is set to 5 because that is the 
 	 * enemies health when they spawn to attack the player
 	 */
+	private final static int MAX_HEALTH = 5;
 	private int health = 5;
 	/**
 	 * The method weapon is used to choose which weapon will be chosen
@@ -52,8 +53,13 @@ public class Enemy extends ActiveAgents{
 	 * user. It will also subtract one point from its health depending on the weapon used
 	 */
 	public void Hit(){
-		System.out.println("The enemy has been hit");
-		setHealth(health);
+		if(health > 0){
+			System.out.println("The enemy has been hit");
+			setHealth(health);
+		}
+		else if(health == 0){
+			System.out.println("The enemy has been defeated");
+		}
 		System.out.println("The enemy has " + health + " health points remaining");
 	}
 	/**
@@ -64,6 +70,9 @@ public class Enemy extends ActiveAgents{
 	public void setHealth(int health){
 		this.health = health;
 		this.health--;
+	}
+	public void heal(){
+		health = MAX_HEALTH;
 	}
 	/**
 	 * This getter for the variable health

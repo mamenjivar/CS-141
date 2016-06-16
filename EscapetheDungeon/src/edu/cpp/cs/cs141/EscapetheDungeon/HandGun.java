@@ -19,6 +19,8 @@ import java.util.Random;
  * associated with the Gun class
  */
 public class HandGun extends Gun{
+	
+	UserInterface UI = new UserInterface();
 	/**
 	 * Will instantiate the random class
 	 * for when the hand gun is a hit or a miss
@@ -51,11 +53,11 @@ public class HandGun extends Gun{
 	 * This method is created in order for the enemy to have a chance to shoot at
 	 * the player and inflict damage
 	 */
-	public void enemyShoot(){
+	public void shoot(Player player, Enemy enemy){
 		int create = rand.nextInt(100) + 1;
 		if (create < accuracy){
-			System.out.println("It was a hit");
 			player.Hit();
+			enemy.Hit();
 		}
 		else
 			System.out.println("It was a miss");
@@ -66,7 +68,7 @@ public class HandGun extends Gun{
 	 * The method shoot will be used when the user or enemy
 	 * fires the pistol and checks whether it was a hit or a miss
 	 */
-	public void shoot(){
+/*	public void playerShoot(){
 		int number = rand.nextInt(100) + 1;
 		if (number < accuracy){
 			System.out.println("It was a hit");
@@ -76,11 +78,17 @@ public class HandGun extends Gun{
 			System.out.println("It was a miss");
 		ammo--;
 		System.out.println("You have: " + ammo + " rounds left");
-	}
+	}*/
 	/**
 	 * The reload method is used to reload the pistol to max capacity	
 	 */
 	public void reload(){
 		ammo = 15;
+	}
+	public void setPlayer(Player player){
+		this.player = player;
+	}
+	public void setEnemy(Enemy enemy){
+		this.enemy = enemy;
 	}
 }

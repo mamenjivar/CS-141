@@ -21,7 +21,7 @@ public class TestGun {
 		
 		//change if else orientation to enum switch statement
 		if(weapon.equals("handgun")){
-			pistol.shoot();
+			//pistol.shoot();
 		}
 		else if(weapon.equals("shotgun")){
 			SG.shoot();
