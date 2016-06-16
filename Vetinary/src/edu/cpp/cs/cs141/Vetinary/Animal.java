@@ -1,18 +1,43 @@
 /**
- * 
+ * CS 141: Intro to Programming and Problem Solving
+ * Professor: Edwin Rodríguez
+ *
+ * Programming Assignment #4
+ *
+ * Vetinary program
+ *
+ * Miguel Menjivar
  */
 package edu.cpp.cs.cs141.Vetinary;
 
 /**
- * @author User
+ * @author Miguel Menjivar
  *
  */
 public class Animal {
+	/**
+	 * field that will hold value for pet's name
+	 */
 	private String petName;
+	/**
+	 * private field that will hold value for pet's age
+	 */
 	private int petAge;
+	/**
+	 * private array that will hold medical history of the pet
+	 */
 	private String[] medicalHistory;
+	/**
+	 * private array that will hold Strings of vaccinations of the pet
+	 */
 	private String[] vaccinations;
+	/**
+	 * this private field will hold the value of the pet's owner name
+	 */
 	private String ownerName;
+	/**
+	 * this private field will hold value for the appointments for each pet
+	 */
 	private Appointments appointment;
 
 	/**
@@ -41,7 +66,10 @@ public class Animal {
 		this.vaccinations = vaccinations;
 		this.ownerName = ownerName;
 	}
-
+	/**
+	 * setters and getters for all of the fields of this class
+	 * @return
+	 */
 	public String getPetName() {
 		return petName;
 	}
